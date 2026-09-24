@@ -40,10 +40,10 @@ public class BiobuzzTeleop extends LinearOpMode {
 
 
         //6000 rpm motor 28ppm
-        //sMotor = hardwareMap.get(DcMotorEx.class, "shooterMotor");
+        sMotor = hardwareMap.get(DcMotorEx.class, "shooterMotor");
 
-        //1620 rpm motor 103.8ppm
-        //iMotor = hardwareMap.get(DcMotorEx.class, "intakeMotor");
+        //1620 rpm motor 103.8pp 9m
+        iMotor = hardwareMap.get(DcMotorEx.class, "intakeMotor");
 
 
 
@@ -82,9 +82,9 @@ public class BiobuzzTeleop extends LinearOpMode {
             bRMotor.setPower(bRPower);
 
             //Shooter Code
-            /*if(gamepad1.right_bumper){
+            if(gamepad1.right_bumper){
                 iMotor.setVelocity(103);
-                if(gamepad1.right_trigger_pressed){
+                if(gamepad1.right_trigger == 1){
                     sMotor.setVelocity(28);
                     telemetry.addLine("Firing!");
                 }
@@ -94,7 +94,7 @@ public class BiobuzzTeleop extends LinearOpMode {
             }
             else{
                 iMotor.setVelocity(0);
-            }*/
+            }
 
             telemetry.update();
             telemetry.clear();
