@@ -175,10 +175,8 @@ public class TEMPBIOBUZZAUTO extends LinearOpMode {
             telemetry.clear();
         }
     public void tmove(double power, double angle, long time) {
-        double ay = (Math.sin(Math.toRadians(angle+90)));
-        double ax = (Math.cos(Math.toRadians(angle+90)));
-        ay = ay*power;
-        ax = ax*power;
+        double ay = (power*(Math.sin(Math.toRadians(angle+90))));
+        double ax = (power*(Math.cos(Math.toRadians(angle+90))));
         double fLPower = (ay + ax);
         double bLPower = (ay - ax);
         double fRPower = (ay - ax);
