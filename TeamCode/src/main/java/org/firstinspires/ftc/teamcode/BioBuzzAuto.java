@@ -1,6 +1,6 @@
 /*
 package org.firstinspires.ftc.teamcode;
-
+package org.firstinspires.ftc.teamcode.tutorial;
 
 import androidx.annotation.NonNull;
 
@@ -12,7 +12,6 @@ import com.acmerobotics.roadrunner.Pose2d;
 import com.acmerobotics.roadrunner.SequentialAction;
 import com.acmerobotics.roadrunner.Vector2d;
 import com.acmerobotics.roadrunner.ftc.Actions;
-
 // Non-RR imports
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -71,60 +70,18 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-
-@Config
-@Autonomous(name = "BioBuzzAuto", group = "Autonomous")
-public class BioBuzzAuto extends LinearOpMode {
-
-    //Below is shooter / motor setup and action code.
-    public class Shooters {
-        private DcMotorEx ShooterP;
-        private DcMotorEx ShooterN;
-        private DcMotorEx ShooterTurn;
-
-        public Shooters(HardwareMap hardwareMap) {
-            ShooterP = hardwareMap.get(DcMotorEx.class, "ShooterP");
-            ShooterP.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.FLOAT);
-            ShooterP.setDirection(DcMotorEx.Direction.FORWARD);
-
-            ShooterN = hardwareMap.get(DcMotorEx.class, "ShooterN");
-            ShooterN.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.FLOAT);
-            ShooterN.setDirection(DcMotorEx.Direction.FORWARD);
-
-            ShooterTurn = hardwareMap.get(DcMotorEx.class, "ShooterTurn");
-            ShooterTurn.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.FLOAT);
-            ShooterTurn.setDirection(DcMotorEx.Direction.FORWARD);
-
-        }
-    }
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 
-
-    //Below is Servo setup and action code.
-    public class FlowerArm {
-        private Servo FlowerArm;
-
-
-        public FlowerArm(HardwareMap hardwareMap) {
-            FlowerArm = hardwareMap.get(Servo.class, "FlowerArm");
-        }
-    }
-
+@Autonomous(name="RRBiobuzzAuto")
+public class SampleOpMode extends LinearOpMode()
 
 
 
     @Override
     public void runOpMode() throws InterruptedException {
-        // instantiate your MecanumDrive at a particular pose.
-        Pose2d initialPose = new Pose2d(11.8, 61.7, Math.toRadians(90));
-        MecanumDrive drive = new MecanumDrive(hardwareMap, initialPose);
-        // Make Shooter Instances
-        Shooters ShooterN = new Shooters(hardwareMap);
-        Shooters ShooterP = new Shooters(hardwareMap);
-        Shooters ShooterTurn = new Shooters(hardwareMap);
-        // make Flower Instances
-        FlowerArm FlowerArm = new FlowerArm(hardwareMap);
 
     }
-}
- */
+
+    */

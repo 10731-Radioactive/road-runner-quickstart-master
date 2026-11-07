@@ -31,9 +31,9 @@ public class BiobuzzTeleop extends LinearOpMode {
     private DcMotorEx bRMotor = null;
     private DcMotorEx PsMotor = null;
     private DcMotorEx NsMotor = null;
+    private DcMotorEx sTMotor = null;
     private DcMotorEx iMotor = null;
     private Servo FlowerServo = null;
-
 
     private Servo NServo = null;
 
@@ -70,6 +70,7 @@ public class BiobuzzTeleop extends LinearOpMode {
         //6000 rpm motor 28ppm
         NsMotor = hardwareMap.get(DcMotorEx.class, "NshooterMotor");
         PsMotor = hardwareMap.get(DcMotorEx.class, "PshooterMotor");
+        sTMotor = hardwareMap.get(DcMotorEx.class, "shooterTurnMotor");
 
         NServo = hardwareMap.get(Servo.class, "NectarServo");
         PServo = hardwareMap.get(Servo.class, "PollenServo");
@@ -115,6 +116,7 @@ public class BiobuzzTeleop extends LinearOpMode {
             bLMotor.setPower(bLPower);
             bRMotor.setPower(bRPower);
 
+            sTMotor.setPower((gamepad2.left_stick_x)/3);
             //TestServo.setPosition(Math.sin(x));
 
             //start shooter Code -v
@@ -143,6 +145,7 @@ public class BiobuzzTeleop extends LinearOpMode {
             if (gamepad1.aWasPressed()) {
                 IntakeOn = !IntakeOn;
             }
+
 
 
 
@@ -181,20 +184,23 @@ public class BiobuzzTeleop extends LinearOpMode {
             }
 
             if (FlowerCollectorOn) {
-                FlowerServo.setPosition(0.8);
-            } else {
                 FlowerServo.setPosition(0);
+            } else {
+                FlowerServo.setPosition(0.8);
             }
+
             if (gamepad2.left_trigger > 0.15) {
                 NServo.setPosition(0);
             } else {
                 NServo.setPosition(0.8);
             }
+
             if (gamepad2.right_trigger > 0.15) {
                 PServo.setPosition(0);
             } else {
                 PServo.setPosition(0.75);
             }
+
             /*
             if (gamepad1.dpadLeftWasPressed()) {
                 Pdefaultshootervel = Pdefaultshootervel -= 100;
